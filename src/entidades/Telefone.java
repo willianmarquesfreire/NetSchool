@@ -1,8 +1,9 @@
 package entidades;
 
-class Telefone {
+import sql.CreateTable;
 
-    private Long id;
+class Telefone extends EntidadeAbstrata {
+
     private String ddd;
     private String numero;
     private Boolean mensagem;
@@ -34,14 +35,6 @@ class Telefone {
         this.tipoTelefone = tipoTelefone;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getDdd() {
         return ddd;
     }
@@ -64,6 +57,31 @@ class Telefone {
 
     public void setMensagem(Boolean mensagem) {
         this.mensagem = mensagem;
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.TELEFONE.getSql();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

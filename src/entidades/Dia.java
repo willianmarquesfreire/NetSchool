@@ -1,10 +1,10 @@
 package entidades;
 
 import java.util.Date;
+import sql.CreateTable;
 
-public class Dia {
+public class Dia extends EntidadeAbstrata {
 
-    private Long id;
     private Date referencia;
     private String descricao;
     private Calendario calendario;
@@ -14,14 +14,6 @@ public class Dia {
         this.referencia = referencia;
         this.descricao = descricao;
         this.calendario = calendario;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Date getReferencia() {
@@ -46,6 +38,33 @@ public class Dia {
 
     public void setCalendario(Calendario calendario) {
         this.calendario = calendario;
+    }
+
+    @Override
+    public String create() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(CreateTable.DIA);
+        return sb.toString();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

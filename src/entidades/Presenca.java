@@ -1,8 +1,9 @@
 package entidades;
 
-public class Presenca {
+import sql.CreateTable;
 
-    private Long id;
+public class Presenca extends EntidadeAbstrata {
+
     private Boolean confirmada;
     private AlunoPeriodoDisciplina alunoPeriodoDisciplina;
     private Dia dia;
@@ -12,14 +13,6 @@ public class Presenca {
         this.confirmada = confirmada;
         this.alunoPeriodoDisciplina = alunoPeriodoDisciplina;
         this.dia = dia;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Boolean getConfirmada() {
@@ -44,6 +37,31 @@ public class Presenca {
 
     public void setDia(Dia dia) {
         this.dia = dia;
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.PRESENCA.getSql();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

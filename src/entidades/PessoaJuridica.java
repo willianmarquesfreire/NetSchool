@@ -1,5 +1,7 @@
 package entidades;
 
+import sql.CreateTable;
+
 public class PessoaJuridica extends Pessoa {
 
     private String nomeFantasia;
@@ -34,6 +36,31 @@ public class PessoaJuridica extends Pessoa {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    @Override
+    public String delete() {
+        return super.delete(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        return super.select(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        return super.update(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String insert() {
+        return super.insert(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.PESSOA_JURIDICA.getSql();
     }
 
 }

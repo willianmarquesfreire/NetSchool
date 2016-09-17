@@ -1,8 +1,9 @@
 package entidades;
 
-public class AlunoPeriodoDisciplina {
+import sql.CreateTable;
 
-    private Long id;
+public class AlunoPeriodoDisciplina extends EntidadeAbstrata {
+
     private Aluno aluno;
     private PeriodoDisciplina periodoDisciplina;
 
@@ -20,20 +21,39 @@ public class AlunoPeriodoDisciplina {
         this.periodoDisciplina = periodoDisciplina;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Aluno getAluno() {
         return aluno;
     }
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
+    }
+
+    @Override
+    public String create() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(CreateTable.ALUNOPERIODODISCIPLINA);
+        return sb.toString();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -1,10 +1,10 @@
 package entidades;
 
 import java.util.Date;
+import sql.CreateTable;
 
-public class GradeCurricular {
+public class GradeCurricular extends EntidadeAbstrata {
 
-    private Long id;
     private String descricao;
     private Date inicio;
     private Date fim;
@@ -16,14 +16,6 @@ public class GradeCurricular {
         this.inicio = inicio;
         this.fim = fim;
         this.curso = curso;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescricao() {
@@ -56,6 +48,31 @@ public class GradeCurricular {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.GRADECURRICULAR.getSql();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

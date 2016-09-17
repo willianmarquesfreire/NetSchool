@@ -1,21 +1,14 @@
 package entidades;
 
-class Disciplina {
+import sql.CreateTable;
 
-    private Long id;
+class Disciplina extends EntidadeAbstrata {
+
     private String nome;
 
     public Disciplina(Long id, String nome) {
         this.id = id;
         this.nome = nome;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -24,6 +17,31 @@ class Disciplina {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.DISCIPLINA.getSql();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

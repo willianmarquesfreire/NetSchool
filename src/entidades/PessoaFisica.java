@@ -1,6 +1,7 @@
 package entidades;
 
 import java.util.Date;
+import sql.CreateTable;
 
 public class PessoaFisica extends Pessoa {
 
@@ -30,6 +31,31 @@ public class PessoaFisica extends Pessoa {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    @Override
+    public String delete() {
+        return super.delete(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        return super.select(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        return super.update(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String insert() {
+        return super.insert(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.PESSOA_FISICA.getSql();
     }
 
 }

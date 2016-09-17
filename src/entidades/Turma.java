@@ -1,8 +1,9 @@
 package entidades;
 
-public class Turma {
+import sql.CreateTable;
 
-    private Long id;
+public class Turma extends EntidadeAbstrata {
+
     private String nome;
     private GradeCurricular gradeCurricular;
 
@@ -10,14 +11,6 @@ public class Turma {
         this.id = id;
         this.nome = nome;
         this.gradeCurricular = gradeCurricular;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -34,6 +27,31 @@ public class Turma {
 
     public void setGradeCurricular(GradeCurricular gradeCurricular) {
         this.gradeCurricular = gradeCurricular;
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.TURMA.getSql();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

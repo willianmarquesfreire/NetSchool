@@ -1,10 +1,10 @@
 package entidades;
 
 import java.math.BigDecimal;
+import sql.CreateTable;
 
-public class Nota {
+public class Nota extends EntidadeAbstrata {
 
-    private Long id;
     private BigDecimal valor;
     private AlunoPeriodoDisciplina alunoPeriodoDisciplina;
     private Avaliacao avaliacao;
@@ -14,14 +14,6 @@ public class Nota {
         this.valor = valor;
         this.alunoPeriodoDisciplina = alunoPeriodoDisciplina;
         this.avaliacao = avaliacao;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public BigDecimal getValor() {
@@ -46,6 +38,31 @@ public class Nota {
 
     public void setAvaliacao(Avaliacao avaliacao) {
         this.avaliacao = avaliacao;
+    }
+
+    @Override
+    public String create() {
+        return CreateTable.NOTA.getSql();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

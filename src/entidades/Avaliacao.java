@@ -1,8 +1,9 @@
 package entidades;
 
-class Avaliacao {
+import sql.CreateTable;
 
-    private Long id;
+class Avaliacao extends EntidadeAbstrata {
+
     private String descricao;
     private PeriodoDisciplina periodoDisciplina;
     private TipoAvaliacao tipoAvaliacao;
@@ -12,14 +13,6 @@ class Avaliacao {
         this.descricao = descricao;
         this.periodoDisciplina = periodoDisciplina;
         this.tipoAvaliacao = tipoAvaliacao;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescricao() {
@@ -44,5 +37,32 @@ class Avaliacao {
 
     public void setTipoAvaliacao(TipoAvaliacao tipoAvaliacao) {
         this.tipoAvaliacao = tipoAvaliacao;
+    }
+
+    @Override
+    public String create() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(CreateTable.AVALIACAO);
+        return sb.toString();
+    }
+
+    @Override
+    public String insert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String select() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
